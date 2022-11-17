@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
 WORKDIR /opt/tomcat/.jenkins/workspace/dsl-1/target/
+COPY hello-world-war-1.0.0.war /tmp/hello-world-war.war
 
 #Install prerequisites
 RUN apt-get -y update
@@ -20,7 +21,6 @@ CMD ["bash"]
 MAINTAINER ilarionb@gmail.com
 WORKDIR /usr/local/tomcat/webapps
 
-COPY hello-world-war-1.0.0.war /tmp/hello-world-war.war
 RUN cp /tmp/hello-world-war.war /usr/local/tomcat/webapps/hello-world-war.war
 
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
