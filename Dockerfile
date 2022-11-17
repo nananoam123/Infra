@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+WORKDIR /opt/tomcat/.jenkins/workspace/dsl-1/target/
+
 #Install prerequisites
 RUN apt-get -y update
 RUN apt-get -y install openjdk-8-jdk wget
