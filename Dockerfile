@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
 WORKDIR /opt/tomcat/.jenkins/workspace/dsl-1/target/
+RUN pwd
 COPY hello-world-war-1.0.0.war /tmp/hello-world-war.war
 
 #Install prerequisites
